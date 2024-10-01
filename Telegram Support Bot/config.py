@@ -53,8 +53,9 @@ support_db - имя базы данных
 
 На этом, настройка конфига завершена. Можете просто сохранить и закрыть этот файл.
 """
+import os
 
-MySQL = ['localhost', 'user', 'password', 'support_db'] 
-TOKEN = ''
-ADMIN_ID = ''
-PROXY_URL = ''
+MySQL = [os.environ['MYSQL_HOST'], os.environ['MYSQL_USER'], os.environ['MYSQL_PASSWORD'], os.environ['MYSQL_DATABASE']] 
+TOKEN = os.environ['BOT_TOKEN']
+ADMIN_ID = os.environ['ADMIN_ID']
+PROXY_URL = os.environ.get('PROXY_URL', '')
